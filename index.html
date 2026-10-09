@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Tian 的个人主页：AI 应用、风电数据平台、项目进展与开发记录。">
+  <meta property="og:title" content="Tian · 项目与实践">
+  <meta property="og:description" content="从一个想法，到一个可以使用的作品。记录 AI 应用、工程项目与每一步进展。">
+  <meta property="og:type" content="website">
+  <title>Tian · 项目与实践</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Tian 首页"><span class="brand-mark">t.</span><span>TIAN<span class="brand-caption"> / BUILD LOG</span></span></a>
+    <nav aria-label="主要导航">
+      <a href="#projects">项目</a><a href="#now">进展</a><a href="#journal">记录</a><a href="#about">关于</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换为深色模式" title="切换主题"><span id="theme-icon" aria-hidden="true">◐</span><span class="theme-label">主题</span></button>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="short-line"></span>控制工程 / AI 应用 / 持续实践</p>
+        <h1 id="hero-title">你好，我是 Tian。<br>把想法做成<span class="accent-text">作品。</span></h1>
+        <p class="hero-description">探索 AI 怎样进入真实的工作流程。这里放我正在做的项目，也记录从第一步到交付的过程。</p>
+        <div class="hero-actions"><a class="button button-primary" href="#projects">看看项目</a><a class="text-link" href="#now">最近在做什么</a></div>
+        <p class="hero-note">Movement is better than talk.</p>
+      </div>
+      <aside class="focus-card" aria-labelledby="focus-title">
+        <div class="focus-heading"><span class="eyebrow">CURRENT FOCUS</span><span class="status-tag">进行中</span></div>
+        <span class="focus-number" aria-hidden="true">01</span>
+        <h2 id="focus-title">从自己的<br>个人网站开始。</h2>
+        <p>搭建一个公开的项目与进度入口。先把当前这一步做好。</p>
+        <div class="focus-bottom"><span>个人主页</span><a href="#now" class="text-link">查看当前进展</a></div>
+      </aside>
+    </section>
+    <section class="section wrap" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / SELECTED PROJECTS</p><h2 id="projects-title">正在打磨的作品</h2></div><p>真实项目，持续完善。</p></div>
+      <div id="project-list" class="project-grid" aria-live="polite"><p class="loading-note">正在读取项目…</p></div>
+    </section>
+    <section class="section now-section" id="now" aria-labelledby="now-title">
+      <div class="wrap now-layout">
+        <div class="now-intro"><p class="eyebrow">02 / RIGHT NOW</p><h2 id="now-title">一步一步，<br>留下进展。</h2><p>当前专注个人网站。完成的步骤和还在推进的事情，都在这里。</p><div class="progress-summary"><strong id="done-count">—</strong><span>项已完成 / <span id="total-count">—</span> 项当前任务</span></div><p id="last-updated" class="small-note"></p></div>
+        <div id="task-list" class="task-list" aria-live="polite"><p class="loading-note">正在读取进度…</p></div>
+      </div>
+    </section>
+    <section class="section wrap" id="journal" aria-labelledby="journal-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / BUILD JOURNAL</p><h2 id="journal-title">开发记录</h2></div><p>记录做了什么，也记录为什么。</p></div>
+      <div id="journal-list" class="journal-list" aria-live="polite"><p class="loading-note">正在读取记录…</p></div>
+    </section>
+    <section class="section wrap about-section" id="about" aria-labelledby="about-title">
+      <div><p class="eyebrow">04 / A LITTLE ABOUT ME</p><h2 id="about-title">用工程把想法落地。</h2></div>
+      <div class="about-copy"><p>我是一名控制工程研究生，科研方向是风电监测中的多模态故障诊断与 AI。目前参与声学大模型辅助数据标注、训练与展示平台，主要承担前端开发。</p><p>职业探索更偏向 AI 应用开发，同时对独立游戏和交互体验感兴趣。我希望通过持续完成作品，把学习变成可以检查、可以使用的成果。</p><div class="skill-tags" aria-label="正在使用和学习的技术"><span>Vue</span><span>Python</span><span>Git</span><span>AI 应用</span><span>数据可视化</span></div></div>
+    </section>
+    <noscript><div class="wrap notice">此页的项目与进度需要 JavaScript 来读取。你也可以在 GitHub 仓库的 content.json 中查看原始记录。</div></noscript>
+    <div id="data-error" class="wrap notice" hidden>项目记录暂时无法读取，请刷新后再试。页面介绍仍可正常查看。</div>
+  </main>
+  <footer class="site-footer wrap"><div><span class="footer-brand">t.</span><span>一点想法，一点行动。</span></div><div class="footer-links"><a id="github-link" hidden rel="noopener noreferrer" target="_blank">GitHub</a><a href="#top">回到顶部</a><span>© <span id="year">2026</span> Tian</span></div></footer>
+  <dialog id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-top"><span class="eyebrow">PROJECT NOTES</span><button class="dialog-close" id="dialog-close" aria-label="关闭项目详情" type="button">×</button></div>
+    <p id="dialog-status" class="dialog-status"></p><h2 id="dialog-title"></h2><p id="dialog-summary"></p><h3>我负责的部分</h3><p id="dialog-role"></p><h3>当前进展</h3><p id="dialog-progress"></p><h3>接下来的一步</h3><p id="dialog-next"></p>
+  </dialog>
+</body>
+</html>
