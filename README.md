@@ -1,5 +1,11 @@
 # Tian 的个人主页
 
+公开主页：https://91chd.github.io/
+
+源码仓库：https://github.com/91CHD/91chd.github.io
+
+在线更新内容：https://github.com/91CHD/91chd.github.io/edit/main/content.json
+
 一个为 GitHub Pages 制作的个人主页，包含项目介绍、公开任务进展、开发记录、深浅主题、项目详情和手机适配。纯 HTML / CSS / JavaScript，无需安装依赖或构建。
 
 ## 文件
