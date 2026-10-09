@@ -17,7 +17,17 @@ themeButton.addEventListener('click', () => {
 });
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { if (!explicitTheme) applyTheme(preferredTheme()); });
 document.getElementById('year').textContent = new Date().getFullYear();
-const statusLabels = { done: '已完成', doing: '进行中', todo: '待开始' };
+const profileDialog = document.getElementById('profile-dialog');
+const profileTrigger = document.getElementById('profile-open');
+profileTrigger.addEventListener('click', () => profileDialog.showModal());
+document.getElementById('profile-close').addEventListener('click', () => profileDialog.close());
+profileDialog.addEventListener('close', () => profileTrigger.focus());
+profileDialog.addEventListener('click', (event) => {
+  if (event.target !== profileDialog) return;
+  const bounds = profileDialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) profileDialog.close();
+});
+const statusLabels = { done: '已完成', doing: '进行中', todo: '待做' };
 const dialog = document.getElementById('project-dialog');
 let dialogTrigger;
 function element(tag, className, text) {
@@ -62,17 +72,20 @@ function renderTasks(tasks, updated) {
     const copy = element('div'); copy.append(element('h3', '', task.title), element('p', '', task.note));
     row.append(indicator, copy, element('span', 'task-status', statusLabels[status])); list.append(row);
   });
-  document.getElementById('done-count').textContent = tasks.filter((task) => task.status === 'done').length;
-  document.getElementById('total-count').textContent = tasks.length;
+  document.getElementById('todo-count').textContent = tasks.filter((task) => task.status !== 'done').length;
   document.getElementById('last-updated').textContent = `最后更新 ${updated}`;
 }
 function renderJournal(entries) {
   const list = document.getElementById('journal-list'); list.replaceChildren();
   entries.forEach((entry) => {
     const row = element('article', 'journal-entry');
-    const time = element('time', '', entry.date.replaceAll('-', '.')); time.dateTime = entry.date;
-    const copy = element('div'); copy.append(element('h3', '', entry.title), element('p', '', entry.body));
-    row.append(time, copy, element('span', 'journal-tag', entry.tag)); list.append(row);
+    const time = entry.date ? element('time', '', entry.date.replaceAll('-', '.')) : element('span', 'journal-date', '');
+    if (entry.date) time.dateTime = entry.date;
+    const copy = element('div'); copy.append(element('h3', '', entry.title));
+    if (entry.body) copy.append(element('p', '', entry.body));
+    row.append(time, copy);
+    if (entry.tag) row.append(element('span', 'journal-tag', entry.tag));
+    list.append(row);
   });
 }
 async function init() {
