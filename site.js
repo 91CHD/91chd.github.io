@@ -39,19 +39,21 @@ function element(tag, className, text) {
 function openProject(project, trigger) {
   dialogTrigger = trigger;
   const values = { 'dialog-title': project.title, 'dialog-status': project.status, 'dialog-summary': project.summary, 'dialog-role': project.role, 'dialog-progress': project.progress, 'dialog-next': project.next };
-  Object.entries(values).forEach(([id, value]) => document.getElementById(id).textContent = value);
+  Object.entries(values).forEach(([id, value]) => document.getElementById(id).textContent = value || '');
+  document.getElementById('dialog-next-section').hidden = !project.next;
   renderProjectLinks(document.getElementById('dialog-links'), project);
   dialog.showModal();
 }
 function renderProjectLinks(container, project) {
   container.replaceChildren();
-  for (const [field, label] of [['source', '查看源码'], ['download', 'Windows 试玩']]) {
+  for (const [field, label] of [['source', '查看源码'], ['download', '下载游戏 Demo']]) {
     if (typeof project[field] !== 'string') continue;
     try {
       const url = new URL(project[field]);
       if (url.protocol !== 'https:') continue;
       const link = element('a', 'text-link', label);
       link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      if (field === 'download') link.setAttribute('aria-label', '下载游戏 Demo（Windows ZIP）');
       container.append(link);
     } catch {}
   }
@@ -75,7 +77,9 @@ function renderProjects(projects) {
       article.append(preview);
     }
     const top = element('div', 'project-card-top');
-    top.append(element('span', 'project-symbol', project.symbol), element('span', 'project-status', project.status));
+    if (project.symbol) top.append(element('span', 'project-symbol', project.symbol));
+    else top.classList.add('no-symbol');
+    top.append(element('span', 'project-status', project.status));
     const tags = element('div', 'tags'); project.tags.forEach((tag) => tags.append(element('span', '', tag)));
     const bottom = element('div', 'project-bottom');
     const button = element('button', 'detail-button', '项目详情'); button.type = 'button'; button.setAttribute('aria-label', `查看${project.title}的详情`);

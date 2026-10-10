@@ -7,84 +7,67 @@
       "symbol": "[GAME]",
       "status": "Demo 已完成",
       "category": "第一个上手游戏作品",
-      "summary": "六个海域，吃小鱼成长、解锁技能并挑战 Boss。我的第一个上手游戏 Demo。",
+      "summary": "在六个海域里吃小鱼成长，解锁技能、选择进化，并挑战不同的 Boss。我的第一个上手游戏 Demo。",
       "tags": [
         "Godot",
         "六关挑战",
         "Windows Demo"
       ],
       "role": "从玩法需求和试玩反馈出发，完成首版 Demo 的设计、测试、数值调整和打包发布。",
-      "progress": "0.8 Demo 已完成，包含六关、五种主动技能和随机进化。源码与 Windows 试玩包发布到 GitHub。",
-      "next": "作为上手作品先保留，后续改进待定。卡牌肉鸽是另一个未来项目。",
+      "progress": "0.8 Demo 已发布，包含六个关卡、五种主动技能和随机进化。可下载 Windows 试玩包，也可在 GitHub 查看源码。",
       "image": "./assets/tidebound-demo.png",
       "source": "https://github.com/91CHD/tidebound",
-      "download": "https://github.com/91CHD/tidebound/releases/tag/v0.8"
+      "download": "https://github.com/91CHD/tidebound/releases/download/v0.8/Tidebound-0.8-Windows-x64.zip"
     },
     {
-      "title": "风电数据大模型训练平台",
-      "symbol": "[AI]",
+      "title": "大模型数据管理、训练与展示平台",
       "status": "开发中",
       "category": "科研项目",
-      "summary": "围绕声学数据的导入、预处理、标注、训练与结果展示，构建模型开发流程的操作界面。",
+      "summary": "面向模型开发流程，搭建数据管理、训练任务与结果展示平台。",
       "tags": [
         "Vue",
         "前后端开发",
         "数据可视化"
       ],
-      "role": "独立负责声学大模型数据标注、训练与展示平台的前后端开发，没有其他开发者协助。",
-      "progress": "正在推进数据集、标注、训练任务、测试记录和模型导出等页面。具体模块的完成状态将随项目进展更新。",
+      "role": "目前独立负责大模型数据管理训练与展示平台的前后端开发。",
+      "progress": "数据管理、训练任务和结果展示功能正在持续完善。",
       "next": "按当前科研任务继续完善平台功能。"
-    },
-    {
-      "title": "Tian 的个人主页",
-      "symbol": "</>",
-      "status": "已上线",
-      "category": "独立个人项目",
-      "summary": "展示作品、待做事项与开发记录，用公开的进展陪伴下一件作品从想法走向完成。",
-      "tags": [
-        "GitHub Pages",
-        "响应式界面",
-        "公开进度"
-      ],
-      "role": "确定内容和功能范围，维护项目记录与公开进度。",
-      "progress": "主页已上线，包含项目介绍、待做清单、开发记录与个人介绍。",
-      "next": "实际使用主页，在 GitHub 更新任务与记录，根据体验做下一次改进。"
     }
   ],
   "tasks": [
     {
       "title": "个人主页与首个游戏 Demo 上线",
-      "note": "主页已公开，完成《潮汐进化》上手作品并发布源码与试玩包。",
+      "note": "已发布主页、游戏源码和 Windows 试玩包。",
       "status": "done"
     },
     {
-      "title": "开发一款卡牌肉鸽游戏",
-      "note": "从可玩的核心原型开始。",
-      "status": "todo"
-    },
-    {
       "title": "开发一个应用项目",
-      "note": "完成一个能用的应用，积累产品、工程和效果验证的经验。",
+      "note": "围绕一个真实需求，完成可用的应用。",
       "status": "todo"
     },
     {
-      "title": "在 Steam 上线卡牌肉鸽",
-      "note": "完善游戏，准备试玩版本与发布内容。",
+      "title": "完善大模型平台",
+      "note": "继续完善数据管理、训练与展示功能。",
+      "status": "doing"
+    },
+    {
+      "title": "英文学习",
+      "note": "坚持英文阅读，积累词汇和表达。",
       "status": "todo"
     }
   ],
   "journal": [
     {
-      "date": "2026-10-10",
-      "title": "首个游戏 Demo 发布",
-      "body": "《潮汐进化》上手作品发布到 GitHub，提供源码和 Windows 试玩包。",
-      "tag": "作品"
-    },
-    {
       "date": "2026-10-09",
       "title": "个人主页上线",
       "body": "个人主页发布到 GitHub Pages。",
       "tag": "发布"
+    },
+    {
+      "date": "2026-10-10",
+      "title": "首个游戏 Demo 发布",
+      "body": "《潮汐进化》发布到 GitHub，提供源码和 Windows 试玩包。",
+      "tag": "作品"
     },
     {
       "date": null,

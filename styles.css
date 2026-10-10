@@ -40,5 +40,8 @@ body::after{z-index:-1;background:linear-gradient(90deg,var(--veil-left) 0%,var(
 .project-resources{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px}
 .featured .project-card-top{margin-bottom:14px}
 .featured .project-bottom{margin-top:18px}
+.project-card:not(.featured){grid-column:1 / -1}
+.project-card-top.no-symbol{justify-content:flex-end;margin-bottom:16px}
+.project-resources a[aria-label^="下载"]{display:inline-flex;align-items:center;background:var(--blue);color:var(--bg);border-radius:8px;padding:7px 13px}
 @media(max-width:650px){.project-card.featured{grid-template-columns:1fr}.project-preview{grid-column:auto;grid-row:auto;margin-bottom:22px}.project-resources{gap:15px}}
 @media(max-width:650px){body::before{background-position:76% center;opacity:.37}body::after{background:linear-gradient(90deg,var(--veil-left),var(--veil-middle) 65%,var(--veil-right))}.about-copy{padding:21px}.journal-list{padding:0 20px}.profile-dialog{padding:23px}.profile-grid{grid-template-columns:1fr;gap:0}.profile-heading{gap:13px;margin-top:20px}.profile-avatar{width:58px;height:58px;border-radius:16px;font-size:2rem}.profile-heading h2{font-size:1.75rem}.profile-bottom{align-items:start;flex-wrap:wrap}}
