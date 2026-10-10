@@ -40,7 +40,22 @@ function openProject(project, trigger) {
   dialogTrigger = trigger;
   const values = { 'dialog-title': project.title, 'dialog-status': project.status, 'dialog-summary': project.summary, 'dialog-role': project.role, 'dialog-progress': project.progress, 'dialog-next': project.next };
   Object.entries(values).forEach(([id, value]) => document.getElementById(id).textContent = value);
+  renderProjectLinks(document.getElementById('dialog-links'), project);
   dialog.showModal();
+}
+function renderProjectLinks(container, project) {
+  container.replaceChildren();
+  for (const [field, label] of [['source', '查看源码'], ['download', 'Windows 试玩']]) {
+    if (typeof project[field] !== 'string') continue;
+    try {
+      const url = new URL(project[field]);
+      if (url.protocol !== 'https:') continue;
+      const link = element('a', 'text-link', label);
+      link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      container.append(link);
+    } catch {}
+  }
+  container.hidden = container.children.length === 0;
 }
 document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('close', () => dialogTrigger?.focus());
@@ -53,6 +68,12 @@ function renderProjects(projects) {
   const list = document.getElementById('project-list'); list.replaceChildren();
   projects.forEach((project) => {
     const article = element('article', 'project-card');
+    if (typeof project.image === 'string' && /^\.\/assets\/[a-zA-Z0-9_-]+\.(png|webp|jpg)$/.test(project.image)) {
+      article.classList.add('featured');
+      const preview = element('img', 'project-preview'); preview.src = project.image;
+      preview.alt = `${project.title}的游戏画面`; preview.loading = 'lazy';
+      article.append(preview);
+    }
     const top = element('div', 'project-card-top');
     top.append(element('span', 'project-symbol', project.symbol), element('span', 'project-status', project.status));
     const tags = element('div', 'tags'); project.tags.forEach((tag) => tags.append(element('span', '', tag)));
@@ -60,7 +81,8 @@ function renderProjects(projects) {
     const button = element('button', 'detail-button', '项目详情'); button.type = 'button'; button.setAttribute('aria-label', `查看${project.title}的详情`);
     button.addEventListener('click', () => openProject(project, button));
     bottom.append(element('span', '', project.category), button);
-    article.append(top, element('h3', '', project.title), element('p', '', project.summary), tags, bottom); list.append(article);
+    const resources = element('div', 'project-resources'); renderProjectLinks(resources, project);
+    article.append(top, element('h3', '', project.title), element('p', '', project.summary), tags, bottom, resources); list.append(article);
   });
 }
 function renderTasks(tasks, updated) {

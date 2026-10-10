@@ -1,7 +1,25 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "github": "https://github.com/91CHD",
   "projects": [
+    {
+      "title": "潮汐进化 · 大鱼吃小鱼",
+      "symbol": "[GAME]",
+      "status": "Demo 已完成",
+      "category": "第一个上手游戏作品",
+      "summary": "六个海域，吃小鱼成长、解锁技能并挑战 Boss。我的第一个上手游戏 Demo。",
+      "tags": [
+        "Godot",
+        "六关挑战",
+        "Windows Demo"
+      ],
+      "role": "从玩法需求和试玩反馈出发，完成首版 Demo 的设计、测试、数值调整和打包发布。",
+      "progress": "0.8 Demo 已完成，包含六关、五种主动技能和随机进化。源码与 Windows 试玩包发布到 GitHub。",
+      "next": "作为上手作品先保留，后续改进待定。卡牌肉鸽是另一个未来项目。",
+      "image": "./assets/tidebound-demo.png",
+      "source": "https://github.com/91CHD/tidebound",
+      "download": "https://github.com/91CHD/tidebound/releases/tag/v0.8"
+    },
     {
       "title": "风电数据大模型训练平台",
       "symbol": "[AI]",
@@ -28,20 +46,20 @@
         "响应式界面",
         "公开进度"
       ],
-      "role": "确定内容和功能范围，维护项目记录与公开进度；首版代码由 AI 辅助搭建。",
+      "role": "确定内容和功能范围，维护项目记录与公开进度。",
       "progress": "主页已上线，包含项目介绍、待做清单、开发记录与个人介绍。",
       "next": "实际使用主页，在 GitHub 更新任务与记录，根据体验做下一次改进。"
     }
   ],
   "tasks": [
     {
-      "title": "个人主页上线",
-      "note": "公开展示作品和开发进展。",
+      "title": "个人主页与首个游戏 Demo 上线",
+      "note": "主页已公开，完成《潮汐进化》上手作品并发布源码与试玩包。",
       "status": "done"
     },
     {
       "title": "开发一款卡牌肉鸽游戏",
-      "note": "利用 AI 辅助开发，从可玩的核心原型开始。",
+      "note": "从可玩的核心原型开始。",
       "status": "todo"
     },
     {
@@ -56,6 +74,12 @@
     }
   ],
   "journal": [
+    {
+      "date": "2026-10-10",
+      "title": "首个游戏 Demo 发布",
+      "body": "《潮汐进化》上手作品发布到 GitHub，提供源码和 Windows 试玩包。",
+      "tag": "作品"
+    },
     {
       "date": "2026-10-09",
       "title": "个人主页上线",
